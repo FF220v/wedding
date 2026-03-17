@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   .qbootstrap-cover,
   .video-hero {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -657,7 +657,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 14px;
   border: 1px solid rgba(255, 132, 124, 0.3);
-  padding: 2px 5px;
+  padding: 5px 0px 5px 7px;
 }
 #qbootstrap-couple .amp-center {
   font-size: 60px;
@@ -999,7 +999,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #qbootstrap-testimonials {
-  background: #FF847C;
+  /* background: #FF847C; */
   z-index: 0;
 }
 #qbootstrap-testimonials .overlay {
@@ -1147,9 +1147,9 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .groom-men img {
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
   }
 }
@@ -1224,12 +1224,47 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
+
+.surrounded-icon .icon i {
+  color: #fff;
+  padding: 15px;
+  background: #FF847C;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.surrounded-icon {
+  bottom: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  margin-bottom: 0.4rem;
+}
+
+
 @media screen and (max-width: 768px) {
   .wedding-events .desc .icon {
     position: relative;
     margin: 0;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+
 
 #qbootstrap-started {
   position: relative;
@@ -1280,12 +1315,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-size: 16px !important;
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+select option {
+  color: black !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+select option:disabled {
+  color: grey !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
 #qbootstrap-started .form-control::-webkit-input-placeholder {
   color: #fff;
 }
@@ -1300,8 +1342,8 @@ h1, h2, h3, h4, h5, h6 {
 #qbootstrap-started .form-control:-ms-input-placeholder {
   color: #fff;
 }
-#qbootstrap-started .form-control:focus {
-  background: rgba(255, 255, 255, 0.3);
+#qbootstrap-started {
+  /* background: rgba(255, 255, 255, 0.3); */
 }
 #qbootstrap-started .btn {
   height: 54px;
@@ -1582,7 +1624,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
   background: #FF847C;
 }
-.btn:hover, .btn:active, .btn:focus {
+.btn:hover, .btn:active {
   background: #393e46 !important;
   color: #fff;
   outline: none !important;

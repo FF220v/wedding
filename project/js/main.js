@@ -94,11 +94,17 @@
 	// Parallax
 	var parallax = function() {
 		if ( !isiPad() || !isiPhone() ) {
-			$(window).stellar();
+				$.stellar({
+					verticalOffset: 0,
+					horizontalOffset: 0,
+					scrollProperty: 'scroll',
+					positionProperty: 'position',
+					parallaxBackgrounds: true,
+					parallaxElements: true,
+					responsive: true			
+				});
 		}
 	};
-
-
 
 	// Page Nav
 	var clickMenu = function() {
@@ -159,13 +165,10 @@
 	// Window Scroll
 	var windowScroll = function() {
 		var lastScrollTop = 0;
-
-		$(window).scroll(function(event){
-
-		   	var header = $('#qbootstrap-header'),
-				scrlTop = $(this).scrollTop();
-
-			if ( scrlTop > 500 && scrlTop <= 2000 ) {
+		function scrollEventProc(event) {
+			var header = $('#qbootstrap-header'),
+			scrlTop = $(this).scrollTop();
+			if ( scrlTop > 500 ) {
 				header.addClass('navbar-fixed-top qbootstrap-animated slideInDown');
 			} else if ( scrlTop <= 500) {
 				if ( header.hasClass('navbar-fixed-top') ) {
@@ -174,9 +177,10 @@
 						header.removeClass('navbar-fixed-top qbootstrap-animated slideInDown slideOutUp');
 					}, 100 );
 				}
-			} 
-			
-		});
+			} 		
+		}
+		scrollEventProc(null);
+		$(window).scroll(scrollEventProc);
 	};
 
 
@@ -290,11 +294,37 @@
 	var bgVideo = function() {
 		$('.player').mb_YTPlayer();
 	};
-        
+  
+	function base64Decode(str) {
+    try {
+        const binaryString = atob(str);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+        return new TextDecoder('utf-8').decode(bytes);
+    } catch (e) {
+        console.error('Ошибка при декодировании Base64:', e);
+        return '';
+    }
+	}
+
+	async function invitationsFromParams() {
+		await new Promise(resolve => setTimeout(resolve, 1000));
+		try {
+			const urlParams = new URLSearchParams(window.location.search);
+			const base64String = urlParams.get('data');
+			if (base64String) {
+				const decodedData = base64Decode(decodeURIComponent(base64String));
+				$('#invitation')[0].textContent = decodedData
+			}
+		} catch (e) {
+			console.error("Custom error", e);
+		}
+	}
 
 	// Document on load.
 	$(function(){
-
 		burgerMenu();
 		testimonialCarousel();
 		sliderMain();
@@ -305,6 +335,7 @@
 		contentWayPoint();
 		inlineSVG();
 		bgVideo();
+		invitationsFromParams();
 	});
 
 
