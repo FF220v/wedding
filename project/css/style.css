@@ -5,12 +5,35 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'RussianCursive'; /* Имя, которое будете использовать */
+  src: url('../fonts/comforter/ComforterBrush-Regular.otf') format('opentype'); /* Путь к файлу */
+  font-weight: 400; /* Начертание (normal/bold/400/700 и т.д.) */
+  font-style: normal; /* Стиль (normal/italic) */
+}
+
 /* =======================================================
 *
 * 	Template Style 
 *	Edit this section
 *
 * ======================================================= */
+
+.navbar-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1300px) {
+  .navbar-container {
+      width: 1270px;
+  }
+}
+
+
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
@@ -29,7 +52,7 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-a:hover, a:active, a:focus {
+a:hover, a:active {
   color: #FF847C;
   outline: none;
 }
@@ -40,7 +63,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
   font-weight: 400;
 }
 
@@ -65,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   opacity: 1;
   top: 0;
-  margin-top: 20px;
+  background-color: rgba(50,50,50,0.75);
 }
 @media screen and (max-width: 768px) {
   #qbootstrap-header {
@@ -163,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 34px;
   padding-left: 0;
   color: #fff;
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
 }
 #qbootstrap-header.navbar-fixed-top {
   position: fixed !important;
@@ -615,7 +638,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #qbootstrap-couple h3 {
   font-size: 34px;
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
   color: #FF847C;
 }
 @media screen and (max-width: 768px) {
@@ -699,7 +722,7 @@ h1, h2, h3, h4, h5, h6 {
 #qbootstrap-countdown .countdown span {
   margin: 0 30px;
   display: inline-block;
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
 }
 #qbootstrap-countdown .countdown small {
   display: block;
@@ -1082,7 +1105,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 0;
   font-size: 30px;
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
   font-style: italic;
 }
 #qbootstrap-testimonials .arrow-thumb {
@@ -1126,7 +1149,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .groom-men h3 {
-  font-family: "Clicker Script", cursive;
+  font-family: "RussianCursive", cursive;
   font-size: 28px;
 }
 
