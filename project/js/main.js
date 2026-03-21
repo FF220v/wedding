@@ -31,13 +31,12 @@ async function submitFormData(e) {
 			}
 		}
 		await new Promise((resolve => setTimeout(() => resolve(), 2000)));
-		// await fetch(url, {
-		// 	method: 'POST',
-		// 	body: formData,
-		// 	mode: 'no-cors', // Важно для Google Forms из-за CORS
-		// 	credentials: 'include' // Включаем cookies для аутентификации
-		// });
-		// При mode: 'no-cors' response.status всегда 0, поэтому проверяем успешность по отсутствию ошибок
+		await fetch(url, {
+			method: 'POST',
+			body: formData,
+			mode: 'no-cors', // Важно для Google Forms из-за CORS
+			credentials: 'include' // Включаем cookies для аутентификации
+		});
 		statusTextElemJq.text("Спасибо! Данные отправлены успешно!")
 		statusTextElemJq.addClass("text-success")
 		for (const [docFieldId, formFieldName] of Object.entries(fieldsMap)) {
