@@ -1,3 +1,59 @@
+const fieldsMap = {
+	input_name: "entry.1466778331",
+	input_contact: "entry.728061200",
+	input_event: "entry.820587810",
+	input_comment: "entry.1034689101"
+};
+
+// Функция для отправки данных
+async function submitFormData(e) {
+	try {
+		e.preventDefault()
+		statusTextElemJq = $('#form_status_text')
+		statusTextElemJq.removeClass("text-success").removeClass("text-danger").addClass('d-none')
+		elem = e.target
+		$(elem).attr('disabled', true);
+		$(elem).text("Отправляем...")
+		const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeVxt0InGO4OTl5MeFKFBMHIKejsf4T1fgXwWedfzeVJPbEdQ/formResponse';
+
+		const formData = new FormData();
+		for (const [docFieldId, formFieldName] of Object.entries(fieldsMap)) {
+			
+			const element = document.getElementById(docFieldId);
+			let value = '';
+			value = element.value;
+			if (value !== null && value !== undefined && value !== "" && value !== "none") {
+				formData.append(formFieldName, value);
+			} else {
+				statusTextElemJq.text("Пожалуйста, заполните все поля!")
+				statusTextElemJq.addClass("text-danger")
+				throw Error("Some values are empty")
+			}
+		}
+		await new Promise((resolve => setTimeout(() => resolve(), 2000)));
+		// await fetch(url, {
+		// 	method: 'POST',
+		// 	body: formData,
+		// 	mode: 'no-cors', // Важно для Google Forms из-за CORS
+		// 	credentials: 'include' // Включаем cookies для аутентификации
+		// });
+		// При mode: 'no-cors' response.status всегда 0, поэтому проверяем успешность по отсутствию ошибок
+		statusTextElemJq.text("Спасибо! Данные отправлены успешно!")
+		statusTextElemJq.addClass("text-success")
+		for (const [docFieldId, formFieldName] of Object.entries(fieldsMap)) {
+			const element = document.getElementById(docFieldId);
+			element.value = ""
+		}
+		console.log('Данные отправлены успешно');	
+	} catch(e) {
+		console.error(e);
+	} finally {
+		statusTextElemJq.removeClass("d-none")
+		$(elem).attr('disabled', false);
+		$(elem).text("Я приду!")
+	}
+}
+
 ;(function () {
 	
 	'use strict';

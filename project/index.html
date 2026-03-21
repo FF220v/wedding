@@ -339,20 +339,20 @@
 						<form class="form-inline">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label for="name" class="sr-only">Имя</label>
-									<input type="name" class="form-control" id="name" placeholder="Фамилия, Имя">
+									<label for="input_name" class="sr-only">Имя</label>
+									<input class="form-control" id="input_name" placeholder="Фамилия, Имя">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label for="email" class="sr-only">Телега или хотя бы Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Телега или хотя бы Email">
+									<label for="input_contact" class="sr-only">Ваши контакты (telegram)</label>
+									<input class="form-control" id="input_contact" placeholder="Ваши контакты (telegram)">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label for="name" class="sr-only">Имя</label>
-									<select type="name" class="form-control" id="events-select" placeholder="Куда я приду?">
+									<label for="input_event" class="sr-only"></label>
+									<select class="form-control" id="input_event" placeholder="Куда я приду?">
 										<option disabled selected value="none">Куда я собираюсь прийти?</option>
 										<option value="all_events">Иду на все мероприятия</option>
 										<option value="ceremony">Буду только на церемонии</option>
@@ -361,7 +361,14 @@
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
-								<button type="submit" class="btn btn-default btn-block">Я приду!</button>
+								<div class="form-group">
+									<label for="input_comment" class="sr-only"></label>
+									<textarea class="form-control" id="input_comment" placeholder="Ваши комментарии, поздравления для жениха и невесты =)"></textarea>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12">
+								<b><p id="form_status_text" style="margin:0" class="text-success d-none">1234</p></b>
+								<button onclick="submitFormData(event)" class="btn btn-default btn-block">Я приду!</button>
 							</div>
 						</form>
 					</div>
@@ -708,7 +715,6 @@
 			</div>
 		</div>
 	</footer>
-	
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
