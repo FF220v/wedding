@@ -30,7 +30,6 @@ async function submitFormData(e) {
 				throw Error("Some values are empty")
 			}
 		}
-		await new Promise((resolve => setTimeout(() => resolve(), 2000)));
 		await fetch(url, {
 			method: 'POST',
 			body: formData,
