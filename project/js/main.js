@@ -44,6 +44,8 @@ async function submitFormData(e) {
 		}
 		console.log('Данные отправлены успешно');	
 	} catch(e) {
+		statusTextElemJq.text("О нет! Что-то пошло не так! Скажите об этом Саше!")
+		statusTextElemJq.addClass("text-danger")
 		console.error(e);
 	} finally {
 		statusTextElemJq.removeClass("d-none")
