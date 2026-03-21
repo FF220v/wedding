@@ -25,7 +25,6 @@ async function submitFormData(e) {
 			if (value !== null && value !== undefined && value !== "" && value !== "none") {
 				formData.append(formFieldName, value);
 			} else {
-				statusTextElemJq.text("Пожалуйста, заполните все поля!")
 				statusTextElemJq.addClass("text-danger")
 				throw new Error("Some values are empty")
 			}
