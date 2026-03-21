@@ -25,12 +25,10 @@ async function submitFormData(e) {
 			if (value !== null && value !== undefined && value !== "" && value !== "none") {
 				formData.append(formFieldName, value);
 			} else {
-				statusTextElemJq.text("Пожалуйста, заполните все поля!")
 				statusTextElemJq.addClass("text-danger")
-				throw Error("Some values are empty")
+				throw new Error("Some values are empty")
 			}
 		}
-		await new Promise((resolve => setTimeout(() => resolve(), 2000)));
 		await fetch(url, {
 			method: 'POST',
 			body: formData,
@@ -45,6 +43,13 @@ async function submitFormData(e) {
 		}
 		console.log('Данные отправлены успешно');	
 	} catch(e) {
+		if (e.message == "Some values are empty") {
+			errorText = "Пожалуйста, заполните все поля!";
+		} else {
+			errorText = "О нет! Что-то пошло не так! Скажите об этом Саше!";
+		}
+		statusTextElemJq.text(errorText)
+		statusTextElemJq.addClass("text-danger")
 		console.error(e);
 	} finally {
 		statusTextElemJq.removeClass("d-none")
