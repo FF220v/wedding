@@ -1260,7 +1260,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 992px) {
   .desktop-only {
     display: none !important;
   }
@@ -1466,7 +1466,8 @@ select option:disabled {
   right: 0;
   bottom: 0;
   top: 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 480px) {
   #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
