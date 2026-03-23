@@ -163,6 +163,13 @@ async function submitFormData(e) {
 					parallaxElements: true,
 					responsive: true			
 				});
+				let resizeTimeout;
+				$(window).on('resize', function () {
+						clearTimeout(resizeTimeout);
+						resizeTimeout = setTimeout(function () {
+								$.stellar('refresh');
+						}, 200);
+				});
 		}
 	};
 

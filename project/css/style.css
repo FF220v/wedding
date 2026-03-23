@@ -1254,18 +1254,43 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+
 @media screen and (min-width: 768px) {
   .mobile-only {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 769px) {
   .desktop-only {
     display: none !important;
   }
 }
 
+@media screen and (min-width: 480px) {
+  .mobile-only-press {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .desktop-only-press {
+    display: none !important;
+  }
+}
+
+.press-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 992px) {
+  .desktop-only-heart-icon {
+    display: none !important;
+  }
+}
 
 
 #qbootstrap-started {
@@ -1408,9 +1433,11 @@ select option:disabled {
 }
 
 #qbootstrap-press .qbootstrap-press-item {
+  height: 100%;
   background: #fff;
   float: left;
   margin-bottom: 30px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -1438,14 +1465,14 @@ select option:disabled {
     height: inherit;
     float: none !important;
     width: 100%;
-    display: block !important;
+    display: block;
   }
 }
 #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text {
   float: left;
   padding: 20px;
 }
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title {
+#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-title {
   margin: 0 0 20px 0;
   padding: 0 0 10px 0;
   font-weight: 400;
@@ -1453,7 +1480,7 @@ select option:disabled {
   color: #444;
   position: relative;
 }
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title .qbootstrap-border {
+#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-title .qbootstrap-border {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1471,13 +1498,19 @@ select option:disabled {
 }
 @media screen and (max-width: 480px) {
   #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
-    height: 200px;
+    height: 300px;
     left: 0;
     top: 0;
     position: relative;
     width: 100%;
   }
 }
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 .qbootstrap-nav-toggle {
   width: 25px;
@@ -1759,4 +1792,5 @@ select option:disabled {
 .d-none {
   display: none !important;
 }
+
 /*# sourceMappingURL=style.css.map */
