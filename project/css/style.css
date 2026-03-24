@@ -8,10 +8,22 @@
 
 @font-face {
   font-family: 'RussianCursive'; /* Имя, которое будете использовать */
-  src: url('../fonts/comforter/ComforterBrush-Regular.otf') format('opentype'); /* Путь к файлу */
+  /* src: url('../fonts/comforter/ComforterBrush-Regular.otf') format('opentype'); */
+  /* src: url('../fonts/comforter/marutya.ttf') format('truetype'); */
+  src: url('../fonts/comforter/yahfie.ttf') format('truetype');
   font-weight: 400; /* Начертание (normal/bold/400/700 и т.д.) */
   font-style: normal; /* Стиль (normal/italic) */
 }
+
+@font-face {
+  font-family: 'RussianCursiveTitle'; /* Имя, которое будете использовать */
+  /* src: url('../fonts/comforter/ComforterBrush-Regular.otf') format('opentype'); */
+  src: url('../fonts/comforter/marutya.ttf') format('truetype');
+  /* src: url('../fonts/comforter/yahfie.ttf') format('truetype'); */
+  font-weight: 400; /* Начертание (normal/bold/400/700 и т.д.) */
+  font-style: normal; /* Стиль (normal/italic) */
+}
+
 
 /* =======================================================
 *
@@ -66,6 +78,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   font-family: "RussianCursive", cursive;
   font-weight: 400;
+}
+
+.title-font {
+  font-family: "RussianCursiveTitle", cursive !important;
 }
 
 ::-webkit-selection {
