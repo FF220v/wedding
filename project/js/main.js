@@ -151,25 +151,14 @@ async function submitFormData(e) {
 	};
 
 
-	// Parallax
-	var parallax = function() {
-		if ( !isiPad() || !isiPhone() ) {
-				$.stellar({
-					verticalOffset: 0,
-					horizontalOffset: 0,
-					scrollProperty: 'scroll',
-					positionProperty: 'position',
-					parallaxBackgrounds: true,
-					parallaxElements: true,
-					responsive: true			
-				});
-				let resizeTimeout;
-				$(window).on('resize', function () {
-						clearTimeout(resizeTimeout);
-						resizeTimeout = setTimeout(function () {
-								$.stellar('refresh');
-						}, 200);
-				});
+	// Parallax fix - recalc on resize
+	var parallaxFix = function() {
+		const targetElement = document.querySelector('body');
+		const observer = new ResizeObserver(entries => {
+			window.dispatchEvent(new Event('resize'));						}
+		);
+		if (targetElement) {
+				observer.observe(targetElement);
 		}
 	};
 
@@ -396,7 +385,7 @@ async function submitFormData(e) {
 		testimonialCarousel();
 		sliderMain();
 		clickMenu();
-		parallax();
+		parallaxFix();
 		windowScroll();
 		navigationSection();
 		contentWayPoint();

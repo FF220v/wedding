@@ -93,7 +93,7 @@
 	
 	<div class="qbootstrap-hero" data-section="home">
 		<div class="qbootstrap-overlay"></div>
-		<div class="qbootstrap-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/together1.jpg);">
+		<div class="qbootstrap-cover text-center" data-parallax="scroll" data-speed="0.5" data-image-src="images/together1.jpg">
 			<div class="display-t">
 				<div class="display-tc">
 					<div class="container">
@@ -141,7 +141,7 @@
 		</div>
 	</div>
 
-	<div id="qbootstrap-countdown" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_2.jpg);" data-section="home">
+	<div id="qbootstrap-countdown" data-parallax="scroll" data-speed="0.5" data-image-src="images/cover_bg_2.jpg" data-section="home">
 		<div class="overlay"></div>
 		<div class="display-over">
 			<div class="container">
@@ -168,7 +168,7 @@
 
 	
 
-	<!-- <div id="qbootstrap-testimonials" class="qbootstrap-greetings" data-section="greetings" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+	<!-- <div id="qbootstrap-testimonials" class="qbootstrap-greetings" data-section="greetings" data-parallax="scroll" data-speed="0.5" data-image-src="images/cover_bg_1.jpg"">
 	<div class="overlay"></div>	
 		<div class="container">
 			<div class="row animate-box">
@@ -371,65 +371,63 @@
 		</div>
 	</div>
 
-	<div class="parallax-container" data-stellar-offset-parent="true">
-		<div id="qbootstrap-started" class="qbootstrap-bg" data-section="rsvp" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2">
-						<div class="col-md-12 text-center section-heading svg-sm colored">
-							<img src="images/flaticon/svg/005-two.svg" class="svg" alt="Free HTML5 Bootstrap Template by QBootstrap.com">
-							<h2>
-								<span id="invitation">Дорогие гости!</span>
-								<br>
-								Приглашаем вас на праздник
-							</h2>
-							<div class="row">
-							<div class="col-md-10 col-md-offset-1 subtext">
-								<p style="color:white; margin-bottom: 0;">А теперь вот вам форма. Пожалуйста, заполните её, чтобы мы понимали, сколько вас таких хороших ждать ❤️<br><br>Если вас двое и больше, заполните форму за каждого отдельно.</p>
-							</div>
+	<div id="qbootstrap-started" class="qbootstrap-bg" data-section="rsvp" data-parallax="scroll" data-speed="0.5" data-image-src="images/cover_bg_1.jpg">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="col-md-12 text-center section-heading svg-sm colored">
+						<img src="images/flaticon/svg/005-two.svg" class="svg" alt="Free HTML5 Bootstrap Template by QBootstrap.com">
+						<h2>
+							<span id="invitation">Дорогие гости!</span>
+							<br>
+							Приглашаем вас на праздник
+						</h2>
+						<div class="row">
+						<div class="col-md-10 col-md-offset-1 subtext">
+							<p style="color:white; margin-bottom: 0;">А теперь вот вам форма. Пожалуйста, заполните её, чтобы мы понимали, сколько вас таких хороших ждать ❤️<br><br>Если вас двое и больше, заполните форму за каждого отдельно.</p>
 						</div>
-						</div>
+					</div>
 					</div>
 				</div>
-				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">
-						<form class="form-inline">
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label for="input_name" class="sr-only">Имя</label>
-									<input class="form-control" id="input_name" placeholder="Фамилия, Имя">
-								</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form-inline">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<label for="input_name" class="sr-only">Имя</label>
+								<input class="form-control" id="input_name" placeholder="Фамилия, Имя">
 							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label for="input_contact" class="sr-only">Ваши контакты (telegram)</label>
-									<input class="form-control" id="input_contact" placeholder="Ваши контакты (telegram)">
-								</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<label for="input_contact" class="sr-only">Ваши контакты (telegram)</label>
+								<input class="form-control" id="input_contact" placeholder="Ваши контакты (telegram)">
 							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label for="input_event" class="sr-only"></label>
-									<select class="form-control" id="input_event" placeholder="Куда я приду?">
-										<option disabled selected value="none">Куда я собираюсь прийти?</option>
-										<option value="all_events">Иду на все мероприятия</option>
-										<option value="ceremony">Буду только на церемонии</option>
-										<option value="party">Буду только на вечеринке</option>
-									</select>
-								</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<label for="input_event" class="sr-only"></label>
+								<select class="form-control" id="input_event" placeholder="Куда я приду?">
+									<option disabled selected value="none">Куда я собираюсь прийти?</option>
+									<option value="all_events">Иду на все мероприятия</option>
+									<option value="ceremony">Буду только на церемонии</option>
+									<option value="party">Буду только на вечеринке</option>
+								</select>
 							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label for="input_comment" class="sr-only"></label>
-									<textarea class="form-control" id="input_comment" placeholder="Ваши комментарии, поздравления для жениха и невесты =)"></textarea>
-								</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<label for="input_comment" class="sr-only"></label>
+								<textarea class="form-control" id="input_comment" placeholder="Ваши комментарии, поздравления для жениха и невесты =)"></textarea>
 							</div>
-							<div class="col-md-12 col-sm-12">
-								<b><p id="form_status_text" style="margin:0" class="text-success d-none">1234</p></b>
-								<button onclick="submitFormData(event)" class="btn btn-default btn-block">Я приду!</button>
-							</div>
-						</form>
-					</div>
+						</div>
+						<div class="col-md-12 col-sm-12">
+							<b><p id="form_status_text" style="margin:0" class="text-success d-none">1234</p></b>
+							<button onclick="submitFormData(event)" class="btn btn-default btn-block">Я приду!</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -1131,11 +1129,12 @@
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Owl Carousel -->
 	<script src="js/owl.carousel.min.js"></script>
-	<!-- Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+	<!-- parallax.js -->
+	<script src="js/parallax.min.js"></script>
+
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
