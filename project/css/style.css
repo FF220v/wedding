@@ -49,6 +49,11 @@ body {
   background: #fff;
   height: 100%;
   position: relative;
+  
+}
+.characteristic > li {
+  list-style: none;
+  text-align: left;
 }
 
 a {
