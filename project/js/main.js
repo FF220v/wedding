@@ -10,7 +10,7 @@ async function submitFormData(e) {
 	try {
 		e.preventDefault()
 		statusTextElemJq = $('#form_status_text')
-		statusTextElemJq.removeClass("text-success").removeClass("text-danger").addClass('d-none')
+		statusTextElemJq.removeClass("alert-success").removeClass("alert-danger").addClass('d-none')
 		elem = e.target
 		$(elem).attr('disabled', true);
 		$(elem).text("Отправляем...")
@@ -25,7 +25,7 @@ async function submitFormData(e) {
 			if (value !== null && value !== undefined && value !== "" && value !== "none") {
 				formData.append(formFieldName, value);
 			} else {
-				statusTextElemJq.addClass("text-danger")
+				statusTextElemJq.addClass("alert-danger")
 				throw new Error("Some values are empty")
 			}
 		}
@@ -36,7 +36,7 @@ async function submitFormData(e) {
 			credentials: 'include' // Включаем cookies для аутентификации
 		});
 		statusTextElemJq.text("Спасибо! Данные отправлены успешно!")
-		statusTextElemJq.addClass("text-success")
+		statusTextElemJq.addClass("alert-success")
 		for (const [docFieldId, formFieldName] of Object.entries(fieldsMap)) {
 			const element = document.getElementById(docFieldId);
 			element.value = ""
@@ -49,7 +49,7 @@ async function submitFormData(e) {
 			errorText = "О нет! Что-то пошло не так! Скажите об этом Саше!";
 		}
 		statusTextElemJq.text(errorText)
-		statusTextElemJq.addClass("text-danger")
+		statusTextElemJq.addClass("alert-danger")
 		console.error(e);
 	} finally {
 		statusTextElemJq.removeClass("d-none")
