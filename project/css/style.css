@@ -1277,6 +1277,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .mobile-hidden {
+    visibility: hidden !important;
+  }
+}
+
+
 @media screen and (min-width: 480px) {
   .mobile-only-press {
     display: none !important;
