@@ -353,6 +353,7 @@ async function submitFormData(e) {
   
 	function base64Decode(str) {
     try {
+				str = str.replace(/-/g, '+').replace(/_/g, '/');
         const binaryString = atob(str);
         const bytes = new Uint8Array(binaryString.length);
         for (let i = 0; i < binaryString.length; i++) {
@@ -372,7 +373,7 @@ async function submitFormData(e) {
 			const base64String = urlParams.get('data');
 			if (base64String) {
 				const decodedData = base64Decode(decodeURIComponent(base64String));
-				$('#invitation')[0].textContent = decodedData
+				$('#invitation')[0].innerHTML = decodedData
 			}
 		} catch (e) {
 			console.error("Custom error", e);
