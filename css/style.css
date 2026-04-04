@@ -1048,6 +1048,7 @@ h1, h2, h3, h4, h5, h6 {
   fill: #fff;
 }
 #qbootstrap-testimonials .box-testimony {
+  width: 100%;
   margin-bottom: 2em;
   float: left;
 }
